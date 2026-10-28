@@ -20,13 +20,13 @@ export const FULDEJ_CORPORATE_INFO = {
   phone2: '+234 903 098 6923',
   bankers: 'JAIZ BANK — 0017691758 (Fuldej Integrated Service L T D)',
   legalAdvisor: 'Muhammad Auwal Sani, Esq.',
-  pdfProfileUrl: '/assets/aistudio/COMPANY_PROFILE__FULDEJ_INTEGRATED.docx__2__d4101806.pdf',
-  cacCertificateUrl: '/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf',
+  pdfProfileUrl: 'assets/aistudio/COMPANY_PROFILE__FULDEJ_INTEGRATED.docx__2__d4101806.pdf',
+  cacCertificateUrl: 'assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf',
   cacCertificateFilename: 'CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf',
-  fuldejLogoUrl: '/assets/aistudio/fuldej_company_logo.jpg',
-  mgdiLogoUrl: '/assets/aistudio/MGDI_Logo_updated_66e1dc7b.png',
-  smartgreenLogoUrl: '/assets/aistudio/Smartgreen_logo_18dde11c.jpg',
-  smartgrowthLogoUrl: '/assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png',
+  fuldejLogoUrl: 'assets/aistudio/fuldej_company_logo.jpg',
+  mgdiLogoUrl: 'assets/aistudio/MGDI_Logo_updated_66e1dc7b.png',
+  smartgreenLogoUrl: 'assets/aistudio/Smartgreen_logo_18dde11c.jpg',
+  smartgrowthLogoUrl: 'assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png',
   compliance: [
     { title: 'CAC', subtitle: 'Corporate Affairs Commission', reg: 'RC 7360949' },
     { title: 'FIRS', subtitle: 'Federal Inland Revenue Service', reg: 'Tax Compliant' },
@@ -43,7 +43,7 @@ export const STRATEGIC_PARTNERS: StrategicPartner[] = [
     category: 'Community Technology & Digital Empowerment',
     tagline: 'Affordable Access to Technology, Digital Skills & Innovation Opportunities',
     description: 'A community-based initiative providing affordable access to technology, digital skills, innovation opportunities, entrepreneurship support, and knowledge resources that empower citizens and contribute to sustainable economic growth across Northern Nigeria.',
-    logoUrl: '/assets/aistudio/MGDI_Logo_updated_66e1dc7b.png',
+    logoUrl: 'assets/aistudio/MGDI_Logo_updated_66e1dc7b.png',
     leaderName: 'Fahad Isyaku Umar',
     leaderTitle: 'Strategic Partner & Initiative Lead',
     focusAreas: [
@@ -66,7 +66,7 @@ export const STRATEGIC_PARTNERS: StrategicPartner[] = [
     category: 'Clean Energy & Sustainable Infrastructure',
     tagline: 'Solar Energy, Smart Infrastructure & Sustainable Communities Across Africa',
     description: 'A sustainable development initiative focused on renewable clean energy, smart infrastructure, solar borehole extraction, eco-responsible mining site reclamation, and environmentally sustainable community projects across Nigeria and the African continent.',
-    logoUrl: '/assets/aistudio/Smartgreen_logo_18dde11c.jpg',
+    logoUrl: 'assets/aistudio/Smartgreen_logo_18dde11c.jpg',
     leaderName: 'Eng. Abubaka Salihu & Council',
     leaderTitle: 'Director of Renewable Infrastructure',
     focusAreas: [
@@ -89,7 +89,7 @@ export const STRATEGIC_PARTNERS: StrategicPartner[] = [
     category: 'AI & Ethical Finance Innovation',
     tagline: 'AI-Powered Financial Inclusion, Ethical Finance & Business Growth',
     description: 'An AI-powered initiative driving financial inclusion, ethical finance models, Islamic finance literacy, SME commercial acceleration, and data-driven business transformation for enterprises and burgeoning entrepreneurs.',
-    logoUrl: '/assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png',
+    logoUrl: 'assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png',
     leaderName: 'Fahad Isyaku Umar',
     leaderTitle: 'Strategic Innovation & AI Lead',
     focusAreas: [
@@ -426,7 +426,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     role: 'Founder & Managing Director',
     discipline: 'Executive Leadership & Infrastructure Implementation',
     experienceYears: 20,
-    image: '/assets/team/md-ishaq-ibrahim.jpg',
+    image: 'assets/team/md-ishaq-ibrahim.jpg',
     bio: 'Visionary founder and managing director of Fuldej Integrated Service Ltd. With over 20+ years of multidisciplinary industry and field experience, directing mining concession operations, deep industrial borehole programs, solar energy micro-grids, and corporate partnerships across Nigeria.'
   },
   {
@@ -436,7 +436,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     discipline: 'Strategic Innovation & Strategic Initiatives Lead',
     experienceYears: 18,
     isKeyPartner: true,
-    image: '/assets/team/fahad-isyaku-umar.jpg',
+    image: 'assets/team/fahad-isyaku-umar.jpg',
     bio: 'Co-Founder and Strategic Partner at Fuldej Integrated Service Ltd, spearheading Strategic Innovation Initiatives including the MGDI Initiative, SmartGrowth AI, and SmartGreen. Brings extensive leadership in digital technology solutions, AI-powered financial inclusion models, ethical finance frameworks, and cross-sector commercial partnerships across West Africa.'
   },
   {
@@ -472,7 +472,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     role: 'Information Technology Lead',
     discipline: 'Enterprise Software & Database Architecture',
     experienceYears: 14,
-    image: '/assets/team/dba-danjuma-idiris.jpg',
+    image: 'assets/team/dba-danjuma-idiris.jpg',
     bio: 'Directs cloud infrastructure, custom database management systems, cyber security protocols, and SCADA IoT telemetry for remote solar and water flow monitoring.'
   },
   {
@@ -499,7 +499,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     role: 'Architecture Lead',
     discipline: 'Architectural & Spatial Planning',
     experienceYears: 14,
-    image: '/assets/team/eng-arc-nura-sambo.jpg',
+    image: 'assets/team/eng-arc-nura-sambo.jpg',
     bio: 'Directs sustainable facility design, commercial industrial layouts, eco-friendly municipal architecture, and 3D spatial engineering.'
   },
   {
@@ -508,7 +508,7 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     role: 'Mechatronics Engineer',
     discipline: 'Robotics, Telemetry & Automation',
     experienceYears: 12,
-    image: '/assets/team/eng-ashiru-abdul.jpg',
+    image: 'assets/team/eng-ashiru-abdul.jpg',
     bio: 'Specializes in automated pump controllers, agricultural sensor telemetry, industrial mechatronics, and automated solar tracker controllers.'
   }
 ];

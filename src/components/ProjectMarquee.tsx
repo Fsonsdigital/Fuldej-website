@@ -36,7 +36,7 @@ export const MARQUEE_PROJECTS: MarqueeProject[] = [
     title: 'High-Yield Commercial Monocrystalline Rooftop Array',
     category: 'Commercial Solar PV',
     location: 'Northern Nigeria Facility Corridor',
-    image: '/assets/aistudio/IMG-20261022-WA0060_4d8aa0c3.jpg',
+    image: 'assets/aistudio/IMG-20261022-WA0060_4d8aa0c3.jpg',
     capacity: 'Multi-kW Commercial String',
     status: 'Commissioned & Active',
     specs: [
@@ -52,7 +52,7 @@ export const MARQUEE_PROJECTS: MarqueeProject[] = [
     title: 'Dual-Array Commercial Facility Rooftop Solar Farm',
     category: 'Turnkey Micro-Grid Generation',
     location: 'Commercial Enterprise Hub, Nigeria',
-    image: '/assets/aistudio/Solar_panel_f258c7fd.jpg',
+    image: 'assets/aistudio/Solar_panel_f258c7fd.jpg',
     capacity: 'Heavy-Duty Enterprise Solar Array',
     status: '100% Operational',
     specs: [
@@ -68,7 +68,7 @@ export const MARQUEE_PROJECTS: MarqueeProject[] = [
     title: 'Felicity Commercial Hybrid Inverter & 10-Tier Battery Hub',
     category: 'Power Electronics & Storage',
     location: 'Kano State Operational Installation',
-    image: '/assets/aistudio/Solar_Controller_6fe46b4c.jpg',
+    image: 'assets/aistudio/Solar_Controller_6fe46b4c.jpg',
     capacity: 'Commercial Hybrid Inverter + Server Rack',
     status: 'Calibrated & Certified',
     specs: [
@@ -84,7 +84,7 @@ export const MARQUEE_PROJECTS: MarqueeProject[] = [
     title: 'Smart BMS Lithium Battery Storage Rack Telemetry',
     category: 'Battery Energy Storage (BESS)',
     location: 'Kano Power & Battery Enclosure',
-    image: '/assets/aistudio/IMG-20261022-WA0039_48c0c0cf.jpg',
+    image: 'assets/aistudio/IMG-20261022-WA0039_48c0c0cf.jpg',
     capacity: 'Multi-Tier LiFePO4 Smart Battery Rack',
     status: 'Live DC Storage Synchronized',
     specs: [

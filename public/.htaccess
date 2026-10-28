@@ -1,7 +1,7 @@
 # ==============================================================================
-# Fuldej Integrated Service Ltd — Production cPanel / Apache Configuration
-# Domain: https://fuldej.com.ng (RC 7360949)
-# Optimized for cPanel Shared Hosting (Apache / LiteSpeed) & React SPA
+# Fuldej Integrated Service Ltd — Production cPanel & XAMPP Configuration
+# Domain: https://fuldej.com.ng (CAC RC 7360949)
+# Engineered for: cPanel Shared Hosting (Apache/LiteSpeed) & Local XAMPP
 # ==============================================================================
 
 # 1. Default Charset & Directory Index
@@ -9,7 +9,7 @@ AddDefaultCharset UTF-8
 DirectoryIndex index.html index.php
 
 # 2. Custom Error Document (Falls back to SPA error routing)
-ErrorDocument 404 /index.html
+ErrorDocument 404 index.html
 
 # 3. MIME Types Configuration
 <IfModule mod_mime.c>
@@ -24,24 +24,23 @@ ErrorDocument 404 /index.html
   AddType font/woff .woff
 </IfModule>
 
-# 4. Rewrite Engine & SPA Client-Side Routing
+# 4. Rewrite Engine & Dual-Environment Routing (cPanel & XAMPP)
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
 
-  # Enforce HTTPS (Safe on cPanel with Let's Encrypt / cPanel AutoSSL)
-  <If "%{HTTPS} == 'off'">
-    RewriteCond %{HTTP_HOST} ^(www\.)?fuldej\.com\.ng$ [NC]
-    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-  </If>
+  # Enforce HTTPS ONLY on live production domain (fuldej.com.ng)
+  # Bypassed on localhost / 127.0.0.1 so XAMPP runs smoothly without SSL errors
+  RewriteCond %{HTTP_HOST} ^(www\.)?fuldej\.com\.ng$ [NC]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Allow direct access to real existing files and directories
+  # Allow direct access to existing physical files and folders (CSS, JS, images, videos, PDFs, PHP)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # SPA Fallback: Route all virtual paths (e.g. /commodities, /about, /services) to index.html
-  RewriteRule ^ index.html [L]
+  # SPA Fallback: Route all virtual paths (e.g. /commodities, /about, /services) to index.html in current folder
+  RewriteRule . index.html [L]
 </IfModule>
 
 # 5. Gzip & Deflate Compression for High Speed (Core Web Vitals)
@@ -61,15 +60,15 @@ ErrorDocument 404 /index.html
   AddOutputFilterByType DEFLATE font/woff2
 </IfModule>
 
-# 6. Browser Caching & Zero-Stale HTML Updates
+# 6. Browser Caching for Instant Page Loads
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
 
-  # HTML must revalidate immediately so updates from GitHub / AI Studio appear instantly
+  # HTML must revalidate so updates are seen instantly
   ExpiresByType text/html "access plus 0 seconds"
 
-  # Static versioned assets with Vite content hashes (Cache 1 year)
+  # Static assets cached for high speed
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
@@ -83,7 +82,7 @@ ErrorDocument 404 /index.html
   ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
 
-# Ensure index.html is never cached stochastically
+# Ensure index.html revalidates on new deployments
 <FilesMatch "index\.html$">
   <IfModule mod_headers.c>
     Header set Cache-Control "no-cache, no-store, must-revalidate"
@@ -102,12 +101,11 @@ ErrorDocument 404 /index.html
 
 # 8. Protect Hidden & Sensitive Files (.git, .env)
 <FilesMatch "^\.">
-  Order allow,deny
-  Deny from all
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
 </FilesMatch>
-
-# Allow .htaccess itself to operate without restriction
-<Files ".htaccess">
-  Order allow,deny
-  Deny from all
-</Files>

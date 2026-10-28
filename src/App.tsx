@@ -332,7 +332,7 @@ Official Portal: https://fuldej.com.ng
       phpFormData.append('message', contactForm.message);
       phpFormData.append('consent', '1');
 
-      fetch('/contact-submit.php', {
+      fetch('contact-submit.php', {
         method: 'POST',
         body: phpFormData
       })
@@ -469,11 +469,11 @@ Official Portal: https://fuldej.com.ng
               {/* Medium Polished Official Logo */}
               <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-[#C59B27] bg-black shadow-md shrink-0 flex items-center justify-center transition-transform group-hover:scale-105">
                 <img
-                  src="/assets/images/fuldej_company_logo.jpg"
+                  src="assets/images/fuldej_company_logo.jpg"
                   alt="Fuldej Integrated Service Ltd Logo"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/assets/aistudio/fuldej_company_logo.jpg';
+                    (e.target as HTMLImageElement).src = 'assets/aistudio/fuldej_company_logo.jpg';
                   }}
                 />
               </div>
@@ -744,9 +744,9 @@ Official Portal: https://fuldej.com.ng
                   preload="auto"
                   className="w-full h-full object-cover object-center scale-105 transition-opacity duration-1000"
                 >
-                  <source src="/assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
-                  <source src="/assets/videos/fuldej_solar_installation.mp4" type="video/mp4" />
-                  <source src="/assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
+                  <source src="assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
+                  <source src="assets/videos/fuldej_solar_installation.mp4" type="video/mp4" />
+                  <source src="assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
                 </video>
 
                 {/* Light ambient darkening vignette to make sure video details remain vividly visible */}
@@ -833,7 +833,7 @@ Official Portal: https://fuldej.com.ng
                           <span className="text-emerald-400">20+ Yrs Exp</span>
                         </div>
                         <a
-                          href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                          href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                           target="_blank"
                           rel="noopener noreferrer"
                           download="CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf"
@@ -1088,11 +1088,11 @@ Official Portal: https://fuldej.com.ng
                     }`}>
                       <div className="h-16 w-36 bg-black rounded-xl p-2 border border-[#C59B27]/40 flex items-center justify-center shadow-inner">
                         <img
-                          src="/assets/images/SmartGrowthAI_Logo__1__b01bd855.png"
+                          src="assets/images/SmartGrowthAI_Logo__1__b01bd855.png"
                           alt="SmartGrowth AI Logo"
                           className="max-h-10 object-contain"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = '/assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png';
+                            (e.target as HTMLImageElement).src = 'assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png';
                           }}
                         />
                       </div>
@@ -1133,11 +1133,11 @@ Official Portal: https://fuldej.com.ng
                     }`}>
                       <div className="h-16 w-36 bg-black rounded-xl p-2 border border-[#C59B27]/40 flex items-center justify-center shadow-inner">
                         <img
-                          src="/assets/images/Smartgreen_logo_18dde11c.jpg"
+                          src="assets/images/Smartgreen_logo_18dde11c.jpg"
                           alt="SmartGreen Logo"
                           className="max-h-12 object-contain"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = '/assets/aistudio/Smartgreen_logo_18dde11c.jpg';
+                            (e.target as HTMLImageElement).src = 'assets/aistudio/Smartgreen_logo_18dde11c.jpg';
                           }}
                         />
                       </div>
@@ -1178,11 +1178,11 @@ Official Portal: https://fuldej.com.ng
                     }`}>
                       <div className="h-16 w-36 bg-black rounded-xl p-2 border border-[#C59B27]/40 flex items-center justify-center shadow-inner">
                         <img
-                          src="/assets/images/MGDI_Logo_updated_66e1dc7b.png"
+                          src="assets/images/MGDI_Logo_updated_66e1dc7b.png"
                           alt="MGDI Logo"
                           className="max-h-12 object-contain"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = '/assets/aistudio/MGDI_Logo_updated_66e1dc7b.png';
+                            (e.target as HTMLImageElement).src = 'assets/aistudio/MGDI_Logo_updated_66e1dc7b.png';
                           }}
                         />
                       </div>
@@ -1286,7 +1286,7 @@ Official Portal: https://fuldej.com.ng
                   </button>
 
                   <a
-                    href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                    href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download="CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf"
@@ -1326,7 +1326,7 @@ Official Portal: https://fuldej.com.ng
                     Contact Our Office
                   </button>
                   <a
-                    href="/assets/docs/COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
+                    href="assets/docs/COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download="COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
@@ -1426,7 +1426,7 @@ Official Portal: https://fuldej.com.ng
 
                 <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <a
-                    href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                    href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download="CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf"
@@ -1437,7 +1437,7 @@ Official Portal: https://fuldej.com.ng
                   </a>
 
                   <a
-                    href="/assets/docs/COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
+                    href="assets/docs/COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download="COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
@@ -1972,11 +1972,11 @@ Official Portal: https://fuldej.com.ng
                 }`}>
                   <div className="h-16 w-36 bg-black rounded-lg p-2 border border-[#C59B27]/40 flex items-center justify-center">
                     <img
-                      src="/assets/images/SmartGrowthAI_Logo__1__b01bd855.png"
+                      src="assets/images/SmartGrowthAI_Logo__1__b01bd855.png"
                       alt="SmartGrowth AI"
                       className="max-h-10 object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png';
+                        (e.target as HTMLImageElement).src = 'assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png';
                       }}
                     />
                   </div>
@@ -2024,11 +2024,11 @@ Official Portal: https://fuldej.com.ng
                 }`}>
                   <div className="h-16 w-36 bg-black rounded-lg p-2 border border-[#C59B27]/40 flex items-center justify-center">
                     <img
-                      src="/assets/images/Smartgreen_logo_18dde11c.jpg"
+                      src="assets/images/Smartgreen_logo_18dde11c.jpg"
                       alt="SmartGreen"
                       className="max-h-12 object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/assets/aistudio/Smartgreen_logo_18dde11c.jpg';
+                        (e.target as HTMLImageElement).src = 'assets/aistudio/Smartgreen_logo_18dde11c.jpg';
                       }}
                     />
                   </div>
@@ -2090,11 +2090,11 @@ Official Portal: https://fuldej.com.ng
                 }`}>
                   <div className="h-16 w-36 bg-black rounded-lg p-2 border border-[#C59B27]/40 flex items-center justify-center">
                     <img
-                      src="/assets/images/MGDI_Logo_updated_66e1dc7b.png"
+                      src="assets/images/MGDI_Logo_updated_66e1dc7b.png"
                       alt="MGDI Logo"
                       className="max-h-12 object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/assets/aistudio/MGDI_Logo_updated_66e1dc7b.png';
+                        (e.target as HTMLImageElement).src = 'assets/aistudio/MGDI_Logo_updated_66e1dc7b.png';
                       }}
                     />
                   </div>
@@ -2683,11 +2683,11 @@ Official Portal: https://fuldej.com.ng
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg overflow-hidden border border-[#C59B27] bg-black shrink-0">
                   <img
-                    src="/assets/images/fuldej_company_logo.jpg"
+                    src="assets/images/fuldej_company_logo.jpg"
                     alt="Fuldej Logo"
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/assets/aistudio/fuldej_company_logo.jpg';
+                      (e.target as HTMLImageElement).src = 'assets/aistudio/fuldej_company_logo.jpg';
                     }}
                   />
                 </div>
@@ -2730,11 +2730,11 @@ Official Portal: https://fuldej.com.ng
                 <li className="flex items-center gap-2">
                   <div className="h-7 w-12 bg-black rounded p-1 border border-white/10 flex items-center justify-center shrink-0">
                     <img
-                      src="/assets/images/MGDI_Logo_updated_66e1dc7b.png"
+                      src="assets/images/MGDI_Logo_updated_66e1dc7b.png"
                       alt="MGDI"
                       className="max-h-5 object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/assets/aistudio/MGDI_Logo_updated_66e1dc7b.png';
+                        (e.target as HTMLImageElement).src = 'assets/aistudio/MGDI_Logo_updated_66e1dc7b.png';
                       }}
                     />
                   </div>
@@ -2743,11 +2743,11 @@ Official Portal: https://fuldej.com.ng
                 <li className="flex items-center gap-2">
                   <div className="h-7 w-12 bg-black rounded p-1 border border-white/10 flex items-center justify-center shrink-0">
                     <img
-                      src="/assets/images/SmartGrowthAI_Logo__1__b01bd855.png"
+                      src="assets/images/SmartGrowthAI_Logo__1__b01bd855.png"
                       alt="SmartGrowth"
                       className="max-h-4 object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png';
+                        (e.target as HTMLImageElement).src = 'assets/aistudio/SmartGrowthAI_Logo__1__b01bd855.png';
                       }}
                     />
                   </div>
@@ -2756,11 +2756,11 @@ Official Portal: https://fuldej.com.ng
                 <li className="flex items-center gap-2">
                   <div className="h-7 w-12 bg-black rounded p-1 border border-white/10 flex items-center justify-center shrink-0">
                     <img
-                      src="/assets/images/Smartgreen_logo_18dde11c.jpg"
+                      src="assets/images/Smartgreen_logo_18dde11c.jpg"
                       alt="SmartGreen"
                       className="max-h-5 object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/assets/aistudio/Smartgreen_logo_18dde11c.jpg';
+                        (e.target as HTMLImageElement).src = 'assets/aistudio/Smartgreen_logo_18dde11c.jpg';
                       }}
                     />
                   </div>
@@ -2789,7 +2789,7 @@ Official Portal: https://fuldej.com.ng
                   <span>Verify CAC Registry</span>
                 </button>
                 <a
-                  href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                  href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download="CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf"
@@ -2852,8 +2852,8 @@ Official Portal: https://fuldej.com.ng
                   playsInline
                   className="w-full h-full object-contain"
                 >
-                  <source src="/assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
-                  <source src="/assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
+                  <source src="assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
+                  <source src="assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -2985,7 +2985,7 @@ Official Portal: https://fuldej.com.ng
                 {/* Direct Certificate Download Actions */}
                 <div className="pt-3 border-t border-emerald-500/20 flex flex-wrap gap-2.5 items-center">
                   <a
-                    href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                    href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     download="CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf"
@@ -2997,7 +2997,7 @@ Official Portal: https://fuldej.com.ng
                   </a>
 
                   <a
-                    href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                    href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`py-2.5 px-3.5 rounded-lg border text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors ${
@@ -3063,7 +3063,7 @@ Official Portal: https://fuldej.com.ng
             }`}>
               <div className="flex flex-wrap items-center gap-2">
                 <a
-                  href="/assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
+                  href="assets/aistudio/CERTIFICATE_-__FULDEJ_INTEGRATED_SERVICE_LTD___1___1___2__e5318264.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download="CERTIFICATE_OF_INCORPORATION__FULDEJ_INTEGRATED_SERVICE_LTD.pdf"
@@ -3074,7 +3074,7 @@ Official Portal: https://fuldej.com.ng
                 </a>
 
                 <a
-                  href="/assets/docs/COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
+                  href="assets/docs/COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download="COMPANY_PROFILE__FULDEJ_INTEGRATED.pdf"

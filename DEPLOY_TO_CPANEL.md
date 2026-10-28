@@ -1,123 +1,97 @@
-# Deployment Guide: Fuldej Integrated Service Ltd (cPanel Shared Hosting)
+# Direct Deployment Guide: cPanel & XAMPP (Zero Dependencies)
 
-This guide provides instructions for deploying the **Fuldej Integrated Service Ltd** portal to a conventional **cPanel shared hosting account** (such as Truehost, Namecheap, Bluehost, or any Apache/LiteSpeed web host), and keeping it synchronized with GitHub and AI Studio.
-
----
-
-## 1. Project Architecture Assessment
-
-- **Application Type**: Framework-based Single-Page Application (SPA).
-- **Core Stack**: React 19, TypeScript, Tailwind CSS, Vite.
-- **Node.js Server Requirement**: **None**. The production output is 100% static client-side HTML, CSS, JavaScript, and media assets. It runs directly on conventional Apache/LiteSpeed web servers without requiring a Node.js daemon.
-- **Backend Email Processing**: Includes `contact-submit.php` for native cPanel PHP mail dispatch to `info@fuldej.com.ng`, backed up by client-side mailto and WhatsApp dispatch.
-- **Credentials & API Keys**: Zero private secrets or sensitive API keys are exposed or required in the frontend build.
+This guide explains how to run and deploy the **Fuldej Integrated Service Ltd** website **directly into cPanel shared hosting and XAMPP without downloading dependencies, installing Node.js, or running npm commands**.
 
 ---
 
-## 2. Production Build Output
+## 1. Zero-Dependency Direct Deployment
 
-- **Target Build Directory**: `dist/`
-- **Single Archive Package**: `dist/fuldej-production-build.zip` (ready for 1-click upload and extraction in cPanel File Manager).
-- **Primary Entry File**: `dist/index.html`
-- **Server Configuration**: `dist/.htaccess` (handles HTTPS enforcement, SPA route fallbacks, Gzip/Deflate compression, and caching headers).
+The production build is **100% pre-compiled**. You do **NOT** need:
+- Node.js
+- npm install
+- Git commands
+- Build tools on your cPanel or XAMPP computer
+
+Everything is packaged and ready to run immediately in:
+- **Folder**: `dist/`
+- **ZIP File**: `fuldej-cpanel-xampp-ready.zip` (located in the project root and in `dist/`)
 
 ---
 
-## 3. How to Build the Project
+## 2. Running Directly in XAMPP (Local Machine)
 
-Run the following commands in the project root directory:
+### Step 1: Copy Files to XAMPP
+1. Locate your XAMPP installation folder (usually `C:\xampp\htdocs\` on Windows or `/Applications/XAMPP/htdocs/` on macOS).
+2. Create a folder named **`fuldej`** inside `htdocs` (or copy directly into `htdocs` if you want it at the root).
+3. Copy all files and folders from inside `dist/` (or extract `fuldej-cpanel-xampp-ready.zip`) directly into:
+   ```
+   C:\xampp\htdocs\fuldej\
+   ```
+   Ensure `index.html`, `.htaccess`, `contact-submit.php`, and the `assets/` folder are inside `C:\xampp\htdocs\fuldej\`.
 
-```bash
-# 1. Install dependencies (if not already installed)
-npm install
+### Step 2: Start Apache in XAMPP
+1. Open the **XAMPP Control Panel**.
+2. Click **Start** next to **Apache** (green indicator).
 
-# 2. Type-check the codebase
-npm run lint
+### Step 3: Open in Browser
+Open your browser and navigate to:
+```
+http://localhost/fuldej/
+```
+The complete website—including the automated background video, ambient sound engine, CAC certificate viewer, interactive project marquee, and agro-commodities export catalog—will run at maximum speed with zero dependencies.
 
-# 3. Generate the production static build
-npm run build
+---
+
+## 3. Deploying Directly to cPanel (Shared Hosting)
+
+### Step 1: Upload via File Manager
+1. Log into your **cPanel Account** (e.g. Truehost, Namecheap, etc.).
+2. Open **File Manager** and open the **`public_html/`** directory.
+3. Click **Upload** in the top cPanel toolbar.
+4. Select and upload the file:
+   ```
+   fuldej-cpanel-xampp-ready.zip
+   ```
+
+### Step 2: Extract in `public_html`
+1. In File Manager, right-click `fuldej-cpanel-xampp-ready.zip` and select **Extract**.
+2. Confirm that the files are extracted directly into `public_html/`:
+   - `index.html`
+   - `.htaccess`
+   - `contact-submit.php`
+   - `assets/` (contains CSS, JavaScript, photos, videos, and PDF certificates)
+   - `robots.txt` & `sitemap.xml`
+3. Delete `fuldej-cpanel-xampp-ready.zip` to save hosting space.
+
+### Step 3: Visit Live Website
+Navigate to your domain:
+```
+https://fuldej.com.ng
 ```
 
-This compiles all React components and packages static assets into the `dist/` folder.
+---
+
+## 4. Built-in Speed & Performance Architecture
+
+The site is engineered for high Core Web Vitals speed scores on shared hosting:
+
+1. **Pre-Minified & Tree-Shaken Bundles**:
+   - Single optimized CSS bundle (`assets/index-CyyLB6j_.css`, ~14 KB gzipped).
+   - Single high-performance JavaScript bundle (`assets/index-BGeInoHd.js`, ~179 KB gzipped).
+   - Zero external CDN script delays.
+2. **Apache Gzip & Deflate Compression**:
+   - The included `.htaccess` automatically compresses HTML, CSS, JavaScript, JSON, and SVG before sending to the visitor, cutting bandwidth by up to 75%.
+3. **Smart Browser Caching**:
+   - Media assets, fonts, CSS, and JS chunks are cached by the visitor's browser for **1 year** with immutable content-hash IDs for instant sub-second reloads.
+   - `index.html` has zero-stale cache headers (`no-cache, must-revalidate`), so whenever you update files, visitors see the changes immediately without clearing browser cache.
+4. **Adaptive Dual-Environment Server Rules**:
+   - **On Live cPanel**: Forces secure HTTPS (`https://fuldej.com.ng`).
+   - **On Local XAMPP (`localhost`)**: SSL redirect is automatically bypassed so you never experience local SSL connection errors.
+   - **Single-Page Application (SPA) Fallback**: Any direct access to sub-pages (`#commodities`, `#about`, `#services`) loads instantly without 404 errors.
 
 ---
 
-## 4. How to Deploy to cPanel (Step-by-Step)
+## 5. Contact Form Processing (Dual Delivery)
 
-### Option A: Upload via cPanel File Manager (Fastest & Simplest)
-
-1. Log in to your **cPanel dashboard**.
-2. Open **File Manager** and navigate to your website's document root (typically `public_html/` or `public_html/fuldej.com.ng`).
-3. If there are old placeholder files (like default `index.html`), delete or back them up.
-4. Click **Upload** in the top toolbar and select:
-   - `dist/fuldej-production-build.zip`
-5. Once uploaded, right-click `fuldej-production-build.zip` in File Manager and select **Extract**.
-6. Ensure the extracted files (including `.htaccess`, `index.html`, `contact-submit.php`, and the `assets/` directory) are located directly inside `public_html/` (not nested inside an extra subfolder).
-7. Delete the `.zip` file from the server to save disk space.
-8. Visit `https://fuldej.com.ng` in your browser.
-
----
-
-### Option B: Automatic Updates via cPanel Git™ Version Control & GitHub
-
-To deploy updates easily from AI Studio to GitHub and cPanel:
-
-#### Step 1: Connect your repository to GitHub
-Initialize and push this codebase to your GitHub repository:
-
-```bash
-git init
-git add .
-git commit -m "feat: production ready build for cPanel deployment"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/fuldej-website.git
-git push -u origin main
-```
-
-#### Step 2: Configure cPanel Git™ Version Control
-1. In your **cPanel dashboard**, navigate to **Files > Git™ Version Control**.
-2. Click **Create**.
-3. Set:
-   - **Clone URL**: `https://github.com/YOUR_USERNAME/fuldej-website.git`
-   - **Repository Path**: `/home/username/repositories/fuldej-website`
-   - **Repository Name**: `fuldej-website`
-4. Click **Create**.
-
-#### Step 3: Set up automatic deployment hook (`.cpanel.yml`)
-When using cPanel Git deployment, create a file named `.cpanel.yml` in the repository root:
-
-```yaml
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/username/public_html/
-    - /bin/cp -R dist/* $DEPLOYPATH
-    - /bin/cp dist/.htaccess $DEPLOYPATH
-```
-
-Whenever you push commits to GitHub, you can click **Update from Remote** and **Deploy Head Commit** inside cPanel Git Version Control to update your live website instantly.
-
----
-
-## 5. Summary of Files Inside `dist/`
-
-| File / Folder | Purpose |
-| :--- | :--- |
-| `index.html` | Primary production HTML entry point. Mounts the React application. |
-| `.htaccess` | Apache configuration: redirects HTTP to HTTPS, routes virtual paths to `index.html`, and enables Gzip compression. |
-| `assets/` | Compiled JavaScript chunks, optimized CSS, images, videos, and CAC certificate PDFs. |
-| `contact-submit.php` | Server-side PHP script that processes contact form inquiries and emails them directly to `info@fuldej.com.ng`. |
-| `robots.txt` & `sitemap.xml` | Search engine optimization and crawler indexing instructions for Google and Bing. |
-| `404.html` | Fallback error page. |
-
----
-
-## 6. Pre-Flight Verification Checklist
-
-- [x] `index.html` is included in the root of `dist/`.
-- [x] `dist/.htaccess` includes `RewriteRule ^ index.html [L]` for SPA URL routing.
-- [x] Relative asset paths (`./assets/...`) ensure compatibility across domains and subpaths.
-- [x] CAC Certificate PDF is located in `assets/aistudio/` and downloads directly.
-- [x] High-definition field videos and agro-commodities photos load without external URL dependencies.
-- [x] No private API keys or secrets are embedded in the bundle.
-- [x] TypeScript validation (`tsc --noEmit`) and production bundling (`vite build`) both pass with 0 errors.
+- **On cPanel / XAMPP**: The form posts to `contact-submit.php`, sending the submission directly to **`info@fuldej.com.ng`** via server mail.
+- **Fail-Safe Client Dispatch**: Also prepares the formatted email client (`mailto:info@fuldej.com.ng`) and WhatsApp reach-out (`+234 903 098 6923`), ensuring zero missed buyer inquiries regardless of server configuration.

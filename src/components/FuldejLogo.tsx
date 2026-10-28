@@ -15,7 +15,7 @@ export const FuldejLogo: React.FC<FuldejLogoProps> = ({
   const [imageError, setImageError] = useState(false);
 
   // Exact extracted logo from the official CAC company profile document
-  const logoSrc = '/assets/aistudio/fuldej_company_logo.jpg';
+  const logoSrc = 'assets/aistudio/fuldej_company_logo.jpg';
 
   // Medium is the gold standard size for executive clarity & bold presence
   const imgDimensions =

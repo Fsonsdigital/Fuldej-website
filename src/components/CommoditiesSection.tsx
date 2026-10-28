@@ -57,12 +57,12 @@ export const COMMODITIES_DATA: CommodityItem[] = [
     botanicalName: 'Sesamum indicum',
     category: 'oilseeds',
     categoryLabel: 'Premium Oilseeds',
-    primaryImage: '/assets/aistudio/IMG-20261024-WA0010_abe96735.jpg',
+    primaryImage: 'assets/aistudio/IMG-20261024-WA0010_abe96735.jpg',
     galleryImages: [
-      '/assets/aistudio/IMG-20261024-WA0010_abe96735.jpg',
-      '/assets/aistudio/IMG-20261024-WA0006_5c448b9d.jpg',
-      '/assets/aistudio/IMG-20261024-WA0007_914cca3f.jpg',
-      '/assets/aistudio/IMG-20261024-WA0010_1__abe96735.jpg'
+      'assets/aistudio/IMG-20261024-WA0010_abe96735.jpg',
+      'assets/aistudio/IMG-20261024-WA0006_5c448b9d.jpg',
+      'assets/aistudio/IMG-20261024-WA0007_914cca3f.jpg',
+      'assets/aistudio/IMG-20261024-WA0010_1__abe96735.jpg'
     ],
     grade: 'Export Grade A (Machine Cleaned)',
     specs: [
@@ -89,10 +89,10 @@ export const COMMODITIES_DATA: CommodityItem[] = [
     botanicalName: 'Hibiscus sabdariffa',
     category: 'botanicals',
     categoryLabel: 'Herbal & Beverage Botanicals',
-    primaryImage: '/assets/aistudio/IMG-20261024-WA0005_5adbed91.jpg',
+    primaryImage: 'assets/aistudio/IMG-20261024-WA0005_5adbed91.jpg',
     galleryImages: [
-      '/assets/aistudio/IMG-20261024-WA0005_5adbed91.jpg',
-      '/assets/aistudio/IMG-20261024-WA0016_09529ea7.jpg'
+      'assets/aistudio/IMG-20261024-WA0005_5adbed91.jpg',
+      'assets/aistudio/IMG-20261024-WA0016_09529ea7.jpg'
     ],
     grade: 'Whole Flower Deep Crimson Cut (Selected)',
     specs: [
@@ -119,10 +119,10 @@ export const COMMODITIES_DATA: CommodityItem[] = [
     botanicalName: 'Vigna unguiculata',
     category: 'legumes',
     categoryLabel: 'High-Protein Legumes',
-    primaryImage: '/assets/aistudio/IMG-20261024-WA0017_794e190c.jpg',
+    primaryImage: 'assets/aistudio/IMG-20261024-WA0017_794e190c.jpg',
     galleryImages: [
-      '/assets/aistudio/IMG-20261024-WA0017_794e190c.jpg',
-      '/assets/aistudio/IMG-20261024-WA0014_f2137951.jpg'
+      'assets/aistudio/IMG-20261024-WA0017_794e190c.jpg',
+      'assets/aistudio/IMG-20261024-WA0014_f2137951.jpg'
     ],
     grade: 'Grade A Commercial Selected',
     specs: [
@@ -149,10 +149,10 @@ export const COMMODITIES_DATA: CommodityItem[] = [
     botanicalName: 'Sorghum bicolor & Pennisetum glaucum',
     category: 'grains',
     categoryLabel: 'Sahelian Ancient Grains',
-    primaryImage: '/assets/aistudio/IMG-20261024-WA0011_8ebf4791.jpg',
+    primaryImage: 'assets/aistudio/IMG-20261024-WA0011_8ebf4791.jpg',
     galleryImages: [
-      '/assets/aistudio/IMG-20261024-WA0011_8ebf4791.jpg',
-      '/assets/aistudio/IMG-20261024-WA0008_b2c36025.jpg'
+      'assets/aistudio/IMG-20261024-WA0011_8ebf4791.jpg',
+      'assets/aistudio/IMG-20261024-WA0008_b2c36025.jpg'
     ],
     grade: 'Commercial Food & Flour Milling Grade',
     specs: [
@@ -178,10 +178,10 @@ export const COMMODITIES_DATA: CommodityItem[] = [
     name: 'Commercial Consolidation Warehouse & Container Staging Hub',
     category: 'warehousing',
     categoryLabel: 'Export Logistics & Warehousing',
-    primaryImage: '/assets/aistudio/IMG-20261024-WA0016_09529ea7.jpg',
+    primaryImage: 'assets/aistudio/IMG-20261024-WA0016_09529ea7.jpg',
     galleryImages: [
-      '/assets/aistudio/IMG-20261024-WA0016_09529ea7.jpg',
-      '/assets/aistudio/IMG-20261024-WA0007_914cca3f.jpg'
+      'assets/aistudio/IMG-20261024-WA0016_09529ea7.jpg',
+      'assets/aistudio/IMG-20261024-WA0007_914cca3f.jpg'
     ],
     grade: 'ISO / NEPC Export Compliance Standard',
     specs: [
@@ -359,7 +359,7 @@ export const CommoditiesSection: React.FC<CommoditiesSectionProps> = ({
                 <div className="relative aspect-[4/3] bg-black overflow-hidden group">
                   <video
                     ref={warehouseVideoRef}
-                    src="/assets/aistudio/VID-20261024-WA0019_e81acd5c.mp4"
+                    src="assets/aistudio/VID-20261024-WA0019_e81acd5c.mp4"
                     autoPlay
                     loop
                     muted={isWarehouseVideoMuted}
@@ -878,7 +878,7 @@ export const CommoditiesSection: React.FC<CommoditiesSectionProps> = ({
             {/* Video Player */}
             <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/20 bg-black shadow-2xl relative">
               <video
-                src="/assets/aistudio/VID-20261024-WA0019_e81acd5c.mp4"
+                src="assets/aistudio/VID-20261024-WA0019_e81acd5c.mp4"
                 controls
                 autoPlay
                 playsInline

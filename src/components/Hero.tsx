@@ -169,9 +169,9 @@ export const Hero: React.FC<HeroProps> = ({
                   preload="auto"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
-                  <source src="/assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
-                  <source src="/assets/videos/fuldej_solar_installation.mp4" type="video/mp4" />
-                  <source src="/assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
+                  <source src="assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
+                  <source src="assets/videos/fuldej_solar_installation.mp4" type="video/mp4" />
+                  <source src="assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90" />
               </div>

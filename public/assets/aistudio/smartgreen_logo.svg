@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" fill="none">
+  <defs>
+    <linearGradient id="sgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#059669" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Emblem Icon -->
+  <g transform="translate(15, 12)">
+    <!-- Outer Shield / Circle -->
+    <rect x="0" y="0" width="96" height="96" rx="24" fill="#061E14" stroke="#10B981" stroke-width="2.5" filter="url(#shadow)" />
+    
+    <!-- Solar Sun Arc -->
+    <circle cx="48" cy="48" r="32" stroke="url(#sunGrad)" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.8" />
+    
+    <!-- Central Stylized Leaf & Solar Sprout -->
+    <path d="M48 24 C62 34 66 52 56 66 C46 80 34 78 32 72 C30 64 34 50 48 24 Z" fill="url(#sgGrad)" />
+    <!-- Leaf Center Vein -->
+    <path d="M48 30 C48 48 44 60 38 68" stroke="#A7F3D0" stroke-width="2" stroke-linecap="round" />
+    <!-- Rising Sun Radiant Center -->
+    <circle cx="48" cy="48" r="7" fill="url(#sunGrad)" />
+    <path d="M48 37 V33 M48 63 V59 M37 48 H33 M63 48 H59" stroke="#FDE68A" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(126, 32)">
+    <!-- Main Title -->
+    <text x="0" y="28" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" letter-spacing="-0.02em">
+      SMART<tspan fill="#34D399">GREEN</tspan>
+    </text>
+    <!-- Subtitle Badge -->
+    <text x="2" y="48" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#6EE7B7" letter-spacing="0.14em">
+      INITIATIVE · SUSTAINABLE DEVELOPMENT
+    </text>
+    <text x="2" y="62" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#94A3B8" letter-spacing="0.08em">
+      CLEAN ENERGY · SOLAR · SMART INFRASTRUCTURE
+    </text>
+  </g>
+</svg>

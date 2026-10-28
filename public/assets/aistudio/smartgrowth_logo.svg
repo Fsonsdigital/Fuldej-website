@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" fill="none">
+  <defs>
+    <linearGradient id="growthGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+    <filter id="shadowGrowth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0284C7" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Emblem Icon -->
+  <g transform="translate(15, 12)">
+    <!-- Outer Shield / Container -->
+    <rect x="0" y="0" width="96" height="96" rx="24" fill="#071328" stroke="#0EA5E9" stroke-width="2.5" filter="url(#shadowGrowth)" />
+    
+    <!-- AI Neural Network Nodes & Growth Arrow Bars -->
+    <path d="M26 68 L44 50 L58 60 L74 34" stroke="url(#growthGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Arrow Head -->
+    <path d="M62 34 H74 V46" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Neural Nodes -->
+    <circle cx="26" cy="68" r="5" fill="#0284C7" stroke="#BAE6FD" stroke-width="2" />
+    <circle cx="44" cy="50" r="5" fill="#2563EB" stroke="#93C5FD" stroke-width="2" />
+    <circle cx="58" cy="60" r="5" fill="#4F46E5" stroke="#C7D2FE" stroke-width="2" />
+    <circle cx="74" cy="34" r="6" fill="#06B6D4" stroke="#FFFFFF" stroke-width="2.5" />
+    
+    <!-- Digital Pulse Sparkle -->
+    <circle cx="74" cy="34" r="10" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.8" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(126, 32)">
+    <!-- Main Title -->
+    <text x="0" y="28" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF" letter-spacing="-0.02em">
+      SMART<tspan fill="#38BDF8">GROWTH</tspan> <tspan font-size="20" fill="#818CF8">AI</tspan>
+    </text>
+    <!-- Subtitle Badge -->
+    <text x="2" y="48" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#7DD3FC" letter-spacing="0.14em">
+      FINANCIAL INCLUSION & ETHICAL ADVISORY
+    </text>
+    <text x="2" y="62" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#94A3B8" letter-spacing="0.08em">
+      AI MODELS · SME ACCELERATION · FINANCIAL LITERACY
+    </text>
+  </g>
+</svg>

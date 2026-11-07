@@ -79,6 +79,8 @@ export interface TeamMember {
   experienceYears: number;
   bio: string;
   image?: string;
+  hasPhoto?: boolean;
+  initials?: string;
   isKeyPartner?: boolean;
 }
 

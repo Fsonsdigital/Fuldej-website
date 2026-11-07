@@ -401,17 +401,11 @@ export const CommoditiesSection: React.FC<CommoditiesSectionProps> = ({
                     <div className="flex items-center gap-2">
                       <button
                         onClick={toggleVideoPlayback}
-                        className="p-2 rounded-lg bg-white/20 hover:bg-white/30 backdrop-blur-md text-white transition-colors"
+                        className="px-3 py-1.5 rounded-lg bg-black/60 hover:bg-black/80 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
                         title={isWarehouseVideoPlaying ? "Pause Video" : "Play Video"}
                       >
                         {isWarehouseVideoPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-                      </button>
-                      <button
-                        onClick={toggleVideoSound}
-                        className="p-2 rounded-lg bg-white/20 hover:bg-white/30 backdrop-blur-md text-white transition-colors"
-                        title={isWarehouseVideoMuted ? "Unmute Sound" : "Mute Sound"}
-                      >
-                        {isWarehouseVideoMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
+                        <span>{isWarehouseVideoPlaying ? "Pause" : "Play"}</span>
                       </button>
                     </div>
                   </div>

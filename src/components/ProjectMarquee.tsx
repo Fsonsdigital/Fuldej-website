@@ -48,6 +48,70 @@ export const MARQUEE_PROJECTS: MarqueeProject[] = [
     description: 'Turnkey rooftop solar PV installation executed by Fuldej renewable engineers. Features rigid storm-resistant corrugated roof mounts, high-efficiency solar string arrays, and seamless DC conduit routing.'
   },
   {
+    id: 'machinery-maintenance-servicing',
+    title: 'Manufacturing Transmission & Drive Sprocket Maintenance',
+    category: 'Factory Machinery Maintenance',
+    location: 'Industrial Textile & Manufacturing Plant',
+    image: 'assets/aistudio/IMG-20261029-WA0005_1__6632858f.jpg',
+    capacity: 'Heavy Mechanical Drive Assembly',
+    status: 'Calibrated & In Production',
+    specs: [
+      'Precision Drive Sprocket & Chain Replacement',
+      'Motor Transmission Alignment & Dynamic Balancing',
+      'High-Temperature Industrial Bearing Lubrication',
+      'Operator Maintenance SOP Checklists'
+    ],
+    description: 'Hands-on mechanical overhaul and preventive servicing executed on manufacturing plant machinery. Fuldej technicians inspect internal drive shafts, motor couplings, and train factory personnel on routine maintenance.'
+  },
+  {
+    id: 'steel-portal-warehouse',
+    title: 'Heavy Structural Steel Factory Warehouse Fabrication',
+    category: 'Industrial Plant Infrastructure',
+    location: 'Industrial Manufacturing Zone, Kano',
+    image: 'assets/aistudio/IMG-20261029-WA0004_9fc1e58f.jpg',
+    capacity: 'Heavy Portal Steel Structure',
+    status: 'Structural Steel Erected',
+    specs: [
+      'High-Tensile Structural Steel Portal Frames',
+      'Reinforced Concrete Machine Plinths & Column Bases',
+      'Engineered Clear-Span Warehouse Architecture',
+      'Heavy-Duty Roof Purlins & Cladding Alignment'
+    ],
+    description: 'Turnkey structural steel engineering and industrial facility framework construction by Fuldej civil engineers. Tailored for heavy machinery installation, processing lines, and climate-controlled manufacturing.'
+  },
+  {
+    id: 'rooftop-corrugated-solar',
+    title: 'Factory Rooftop Solar PV Engineering & Mounting',
+    category: 'Industrial Clean Power',
+    location: 'Commercial Manufacturing Facility',
+    image: 'assets/aistudio/IMG-20261022-WA0053_bb9dd2e0.jpg',
+    capacity: 'Industrial Solar Generation',
+    status: 'Grid Synchronized',
+    specs: [
+      'Industrial Corrugated Metal Roof Mounts',
+      'Zero-Penetration Standing Seam Brackets',
+      'Multi-String DC Isolators & Cable Trays',
+      'Full Lightning Grounding Mesh'
+    ],
+    description: 'Industrial rooftop solar installation supplying continuous clean power to factory machinery. Engineered by Fuldej to reduce diesel reliance and maintain uninterrupted production.'
+  },
+  {
+    id: 'crew-installation-training',
+    title: 'Technical Crew Installation & Hands-On Staff Training',
+    category: 'Staff Technical Training',
+    location: 'On-Site Technical Facility, Nigeria',
+    image: 'assets/aistudio/IMG-20261022-WA0055_8b32e5dd.jpg',
+    capacity: 'Technical Workforce Capacity Building',
+    status: 'Certified Execution',
+    specs: [
+      'Supervised Practical Structural Mounting',
+      'Torque Specification & Cable Management Protocols',
+      'Personal Protective Equipment (PPE) Compliance',
+      'On-Site Apprenticeship & Technician Empowerment'
+    ],
+    description: 'Fuldej engineering directorate conducting on-site practical technical training for plant workers and apprentices during active system mounting, promoting long-term capacity building.'
+  },
+  {
     id: 'dual-roof-solar-farm',
     title: 'Dual-Array Commercial Facility Rooftop Solar Farm',
     category: 'Turnkey Micro-Grid Generation',

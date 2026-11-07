@@ -67,8 +67,8 @@ export const STRATEGIC_PARTNERS: StrategicPartner[] = [
     tagline: 'Solar Energy, Smart Infrastructure & Sustainable Communities Across Africa',
     description: 'A sustainable development initiative focused on renewable clean energy, smart infrastructure, solar borehole extraction, eco-responsible mining site reclamation, and environmentally sustainable community projects across Nigeria and the African continent.',
     logoUrl: 'assets/aistudio/Smartgreen_logo_18dde11c.jpg',
-    leaderName: 'Eng. Abubaka Salihu & Council',
-    leaderTitle: 'Director of Renewable Infrastructure',
+    leaderName: 'M.D. Ishaq Ibrahim & Engineering Council',
+    leaderTitle: 'Directorate of Renewable Infrastructure',
     focusAreas: [
       'Solar PV Micro-Grids & Commercial Rooftops',
       'Deep Aquifer Solar Water Pumping Schemes',
@@ -323,7 +323,7 @@ export const INITIAL_CLIENT_PROJECT: ClientProjectTracker = {
   projectName: 'Integrated Energy & Water Infrastructure (120kWp Solar Array & 195m Borehole)',
   division: 'renewable',
   location: 'Challawa Industrial Layout, Kano State',
-  leadDirector: 'M.D. Ishaq Ibrahim Jaafar & Eng. Abubaka Salihu',
+  leadDirector: 'M.D. Ishaq Ibrahim Jaafar & Technical Directorate',
   startDate: '01 February 2026',
   targetCompletion: '30 April 2026',
   progressPercent: 82,
@@ -420,15 +420,30 @@ export const INITIAL_RFQ_INQUIRIES: RfqInquiry[] = [
 ];
 
 export const LEADERSHIP_TEAM: TeamMember[] = [
+  // 1. Photo Frame [WITH PHOTO]
   {
     id: 'ishaq-ibrahim-jaafar',
     name: 'M.D. Ishaq Ibrahim Jaafar',
     role: 'Founder & Managing Director',
     discipline: 'Executive Leadership & Infrastructure Implementation',
     experienceYears: 20,
+    hasPhoto: true,
     image: 'assets/team/md-ishaq-ibrahim.jpg',
+    initials: 'IIJ',
     bio: 'Visionary founder and managing director of Fuldej Integrated Service Ltd. With over 20+ years of multidisciplinary industry and field experience, directing mining concession operations, deep industrial borehole programs, solar energy micro-grids, and corporate partnerships across Nigeria.'
   },
+  // 2. Blank Frame [NO PHOTO - BLANK FRAME]
+  {
+    id: 'eng-musa-zulyadain',
+    name: 'Eng. Musa Zulyadain',
+    role: 'Civil Engineer',
+    discipline: 'Structural & Infrastructure Engineering',
+    experienceYears: 16,
+    hasPhoto: false,
+    initials: 'MZ',
+    bio: 'Senior civil engineer specialist in heavy structural foundations, elevated water reservoirs, machine plinths, reinforced drainage infrastructure, and COREN-standard civil documentation.'
+  },
+  // 3. Photo Frame [WITH PHOTO]
   {
     id: 'fahad-isyaku-umar',
     name: 'Fahad Isyaku Umar',
@@ -436,79 +451,78 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     discipline: 'Strategic Innovation & Strategic Initiatives Lead',
     experienceYears: 18,
     isKeyPartner: true,
+    hasPhoto: true,
     image: 'assets/team/fahad-isyaku-umar.jpg',
+    initials: 'FIU',
     bio: 'Co-Founder and Strategic Partner at Fuldej Integrated Service Ltd, spearheading Strategic Innovation Initiatives including the MGDI Initiative, SmartGrowth AI, and SmartGreen. Brings extensive leadership in digital technology solutions, AI-powered financial inclusion models, ethical finance frameworks, and cross-sector commercial partnerships across West Africa.'
   },
-  {
-    id: 'eng-musa-zulyadain',
-    name: 'Eng. Musa Zulyadain',
-    role: 'Civil Engineer',
-    discipline: 'Structural & Infrastructure Engineering',
-    experienceYears: 16,
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-    bio: 'Senior civil engineer specialist in heavy structural foundations, elevated water reservoirs, machine plinths, reinforced drainage infrastructure, and COREN-standard civil documentation.'
-  },
-  {
-    id: 'eng-abubaka-salihu',
-    name: 'Eng. Abubaka Salihu',
-    role: 'Electrical Engineer',
-    discipline: 'Power Systems & Solar PV Engineering',
-    experienceYears: 15,
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80',
-    bio: 'Leads commercial and industrial solar micro-grids, high-voltage lithium battery energy storage systems, generator ATS synchronization, and rural community electrification schemes.'
-  },
+  // 4. Blank Frame [NO PHOTO - BLANK FRAME]
   {
     id: 'eng-usman-tanko',
     name: 'Eng. Usman Tanko',
     role: 'Mechanical Engineer',
     discipline: 'Drilling Mechanics & Hydraulic Systems',
     experienceYears: 17,
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
+    hasPhoto: false,
+    initials: 'UT',
     bio: 'Oversees rotary deep borehole drilling rigs (up to 250m+), heavy down-the-hole (DTH) air percussion hammers, high-head industrial pumps, and mineral extraction mechanical plants.'
   },
-  {
-    id: 'dba-danjuma-idiris',
-    name: 'DBA Danjuma Idiris',
-    role: 'Information Technology Lead',
-    discipline: 'Enterprise Software & Database Architecture',
-    experienceYears: 14,
-    image: 'assets/team/dba-danjuma-idiris.jpg',
-    bio: 'Directs cloud infrastructure, custom database management systems, cyber security protocols, and SCADA IoT telemetry for remote solar and water flow monitoring.'
-  },
-  {
-    id: 'pharmacy-adamu-lawan-wakili',
-    name: 'Pharmacy Adamu Lawan Wakili',
-    role: 'Pharmaceutical & Environmental Tech',
-    discipline: 'Water Quality Chemistry & Environmental Safety',
-    experienceYears: 14,
-    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80',
-    bio: 'Oversees certified laboratory physicochemical and microbiological water testing, mineral assay safety, and statutory environmental compliance.'
-  },
-  {
-    id: 'qt-surajo-yunusa',
-    name: 'Q&T Surajo Yunusa',
-    role: 'Quantity & Surveyor',
-    discipline: 'Cost Engineering & Land Surveying',
-    experienceYears: 15,
-    image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80',
-    bio: 'Conducts topographical surveys, cadastral concession boundary mapping, bills of quantities (BOQ), and cost audits for commercial contracts.'
-  },
+  // 5. Photo Frame [WITH PHOTO]
   {
     id: 'eng-arc-nura-sambo',
     name: 'Eng. (Arc) Nura Sambo',
     role: 'Architecture Lead',
     discipline: 'Architectural & Spatial Planning',
     experienceYears: 14,
+    hasPhoto: true,
     image: 'assets/team/eng-arc-nura-sambo.jpg',
+    initials: 'NS',
     bio: 'Directs sustainable facility design, commercial industrial layouts, eco-friendly municipal architecture, and 3D spatial engineering.'
   },
+  // 6. Blank Frame [NO PHOTO - BLANK FRAME]
+  {
+    id: 'pharmacy-adamu-lawan-wakili',
+    name: 'Pharmacy Adamu Lawan Wakili',
+    role: 'Pharmaceutical & Environmental Tech',
+    discipline: 'Water Quality Chemistry & Environmental Safety',
+    experienceYears: 14,
+    hasPhoto: false,
+    initials: 'ALW',
+    bio: 'Oversees certified laboratory physicochemical and microbiological water testing, mineral assay safety, and statutory environmental compliance.'
+  },
+  // 7. Photo Frame [WITH PHOTO]
+  {
+    id: 'dba-danjuma-idiris',
+    name: 'DBA Danjuma Idiris',
+    role: 'Information Technology Lead',
+    discipline: 'Enterprise Software & Database Architecture',
+    experienceYears: 14,
+    hasPhoto: true,
+    image: 'assets/team/dba-danjuma-idiris.jpg',
+    initials: 'DI',
+    bio: 'Directs cloud infrastructure, custom database management systems, cyber security protocols, and SCADA IoT telemetry for remote solar and water flow monitoring.'
+  },
+  // 8. Blank Frame [NO PHOTO - BLANK FRAME]
+  {
+    id: 'qt-surajo-yunusa',
+    name: 'Q&T Surajo Yunusa',
+    role: 'Quantity & Surveyor',
+    discipline: 'Cost Engineering & Land Surveying',
+    experienceYears: 15,
+    hasPhoto: false,
+    initials: 'SY',
+    bio: 'Conducts topographical surveys, cadastral concession boundary mapping, bills of quantities (BOQ), and cost audits for commercial contracts.'
+  },
+  // 9. Photo Frame [WITH PHOTO]
   {
     id: 'eng-ashiru-abdul',
     name: 'Eng. Ashiru Abdul',
     role: 'Mechatronics Engineer',
     discipline: 'Robotics, Telemetry & Automation',
     experienceYears: 12,
+    hasPhoto: true,
     image: 'assets/team/eng-ashiru-abdul.jpg',
+    initials: 'AA',
     bio: 'Specializes in automated pump controllers, agricultural sensor telemetry, industrial mechatronics, and automated solar tracker controllers.'
   }
 ];

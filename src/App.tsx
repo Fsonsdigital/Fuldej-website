@@ -48,9 +48,9 @@ import {
 } from 'lucide-react';
 import { LEADERSHIP_TEAM, FULDEJ_CORPORATE_INFO } from './data/mockData';
 import { TeamMember } from './types';
-import { corporateSoundEngine } from './utils/professionalAudio';
 import { ProjectMarquee } from './components/ProjectMarquee';
 import { CommoditiesSection } from './components/CommoditiesSection';
+import { MachineryInstallationSection } from './components/MachineryInstallationSection';
 
 const VALID_PAGES = ['home', 'about', 'services', 'commodities', 'projects', 'partnerships', 'contact', 'privacy'] as const;
 type AppPage = typeof VALID_PAGES[number];
@@ -69,6 +69,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showCacModal, setShowCacModal] = useState(false);
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [modalVideoTab, setModalVideoTab] = useState<'machinery' | 'ventilation' | 'solar' | 'commodities'>('machinery');
   const [teamDepartmentFilter, setTeamDepartmentFilter] = useState<'all' | 'executive' | 'engineering' | 'tech_env'>('all');
 
   // Synchronize browser URL hash with currentPage for cPanel static hosting and back/forward navigation
@@ -140,20 +141,6 @@ export default function App() {
 
     playVideo();
 
-    // Automatically enable cool, subtle background sound on user's first natural interaction (without requiring adjustment)
-    const enableCoolSound = () => {
-      if (video) {
-        corporateSoundEngine.activate(video, 0.18, 0.08); // Calm, pleasant, cool background volume
-      }
-      ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
-        window.removeEventListener(evt, enableCoolSound);
-      });
-    };
-
-    ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
-      window.addEventListener(evt, enableCoolSound, { once: true, passive: true });
-    });
-
     // Auto-resume playback seamlessly when window or tab regains focus or visibility
     const handleVisibilityChange = () => {
       if (!document.hidden && video.paused) {
@@ -165,21 +152,10 @@ export default function App() {
     window.addEventListener('focus', handleVisibilityChange);
 
     return () => {
-      ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
-        window.removeEventListener(evt, enableCoolSound);
-      });
-      corporateSoundEngine.deactivate(video);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleVisibilityChange);
     };
   }, []);
-
-  // Softly pause background corporate sound when inspection modal is opened
-  useEffect(() => {
-    if (showVideoModal) {
-      corporateSoundEngine.deactivate(heroVideoRef.current);
-    } else if (heroVideoRef.current && corporateSoundEngine.getIsPlaying()) {
-      corporateSoundEngine.activate(heroVideoRef.current, 0.18, 0.08);
-    }
-  }, [showVideoModal]);
 
   // Theme state: 'light' | 'dark'
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
@@ -398,7 +374,7 @@ Official Portal: https://fuldej.com.ng
       return id === 'ishaq-ibrahim-jaafar' || id === 'fahad-isyaku-umar';
     }
     if (teamDepartmentFilter === 'engineering') {
-      return ['eng-musa-zulyadain', 'eng-abubaka-salihu', 'eng-usman-tanko', 'qt-surajo-yunusa', 'eng-ashiru-abdul'].includes(id);
+      return ['eng-musa-zulyadain', 'eng-usman-tanko', 'qt-surajo-yunusa', 'eng-ashiru-abdul'].includes(id);
     }
     if (teamDepartmentFilter === 'tech_env') {
       return ['dba-danjuma-idiris', 'pharmacy-adamu-lawan-wakili', 'eng-arc-nura-sambo'].includes(id);
@@ -663,7 +639,7 @@ Official Portal: https://fuldej.com.ng
             {[
               { id: 'home', label: 'Home' },
               { id: 'commodities', label: 'Agro-Commodities (Worldwide Export)' },
-              { id: 'about', label: 'About Us & Full Team (10)' },
+              { id: 'about', label: 'About Us & Full Team (9)' },
               { id: 'services', label: 'Services & Cost Estimator' },
               { id: 'projects', label: 'Projects & Initiatives' },
               { id: 'partnerships', label: 'Strategic Partnerships' },
@@ -811,7 +787,7 @@ Official Portal: https://fuldej.com.ng
                           className="px-6 py-3.5 rounded-xl font-bold text-sm backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 text-white shadow-md transition-all hover:-translate-y-0.5 flex items-center gap-2 active:scale-95"
                         >
                           <Users className="w-4 h-4" />
-                          <span>Meet Our Team (10)</span>
+                          <span>Meet Our Team (9)</span>
                         </button>
 
                         <button
@@ -923,7 +899,7 @@ Official Portal: https://fuldej.com.ng
                   </div>
                   <div>
                     <div className={`font-heading font-extrabold text-2xl sm:text-3xl ${isDark ? 'text-cyan-400' : 'text-[#168A78]'}`}>
-                      10 Members
+                      9 Members
                     </div>
                     <div className={`text-xs mt-1 font-medium ${isDark ? 'text-slate-400' : 'text-[#5A6B82]'}`}>
                       Certified Multidisciplinary Team
@@ -960,6 +936,19 @@ Official Portal: https://fuldej.com.ng
             <CommoditiesSection
               isDark={isDark}
               onSelectCommodityForQuote={handleSelectCommodityForQuote}
+            />
+
+            {/* Industrial Machinery Installation, Plant Maintenance & Staff Training Section */}
+            <MachineryInstallationSection
+              isDark={isDark}
+              onSelectServiceForInquiry={(title, scope) => {
+                setContactForm(prev => ({
+                  ...prev,
+                  subject: `Machinery & Plant Inquiry: ${title}`,
+                  message: `Hello Fuldej Engineering Directorate,\n\nI am contacting your team regarding industrial machinery installation, plant maintenance, and operator training: ${scope || title}.\n\nPlease provide technical site inspection availability, plant timeline, and proposal details.`
+                }));
+                setCurrentPage('contact');
+              }}
             />
 
             {/* Core Service Offerings Preview */}
@@ -1248,7 +1237,7 @@ Official Portal: https://fuldej.com.ng
                   <div className={`p-6 rounded-2xl border ${isDark ? 'bg-[#132238] border-slate-700' : 'bg-white border-slate-200'}`}>
                     <Users className="w-8 h-8 text-cyan-400 mb-3" />
                     <h4 className={`font-heading font-bold text-base mb-1 ${isDark ? 'text-white' : 'text-[#142B4A]'}`}>
-                      10-Member Expert Team
+                      9-Member Expert Team
                     </h4>
                     <p className={`text-xs leading-relaxed ${isDark ? 'text-slate-300' : 'text-[#5A6B82]'}`}>
                       Led by M.D. Ishaq Ibrahim Jaafar & Fahad Isyaku Umar, backed by registered civil, electrical, mechanical, IT, and environmental specialists.
@@ -1479,7 +1468,7 @@ Official Portal: https://fuldej.com.ng
                         : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    All Team (10)
+                    All Team (9)
                   </button>
                   <button
                     onClick={() => setTeamDepartmentFilter('executive')}
@@ -1499,7 +1488,7 @@ Official Portal: https://fuldej.com.ng
                         : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    Civil, Power & Rig Mechanics (5)
+                    Civil, Mechanical & Automation (4)
                   </button>
                   <button
                     onClick={() => setTeamDepartmentFilter('tech_env')}
@@ -1514,7 +1503,7 @@ Official Portal: https://fuldej.com.ng
                 </div>
               </div>
 
-              {/* Team Cards Grid */}
+              {/* Team Cards Grid - Arranged with Picture Between One Another and Blank Frames */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredTeam.map((member) => (
                   <div
@@ -1525,18 +1514,35 @@ Official Portal: https://fuldej.com.ng
                   >
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
-                        {/* Member Photo - Standardized 4:5 Portrait Dimensions */}
-                        <div className="w-24 h-28 sm:w-28 sm:h-32 rounded-xl overflow-hidden border border-[#C59B27]/40 dark:border-slate-700 bg-slate-900 shadow-sm shrink-0">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-full h-full object-cover object-top"
-                            loading="lazy"
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';
-                            }}
-                          />
-                        </div>
+                        {/* Member Frame: Verified Photo or Blank Frame (Arranged between one another) */}
+                        {member.hasPhoto && member.image ? (
+                          <div className="w-24 h-28 sm:w-28 sm:h-32 rounded-xl overflow-hidden border border-[#C59B27]/40 dark:border-slate-700 bg-slate-900 shadow-sm shrink-0">
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="w-full h-full object-cover object-top"
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-24 h-28 sm:w-28 sm:h-32 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-100/80 dark:bg-slate-800/60 shadow-inner shrink-0 flex flex-col items-center justify-center p-2 text-center relative group">
+                            {/* Subtle technical corner markings */}
+                            <div className="absolute top-1.5 left-1.5 w-1.5 h-1.5 border-t border-l border-slate-400 dark:border-slate-600" />
+                            <div className="absolute top-1.5 right-1.5 w-1.5 h-1.5 border-t border-r border-slate-400 dark:border-slate-600" />
+                            <div className="absolute bottom-1.5 left-1.5 w-1.5 h-1.5 border-b border-l border-slate-400 dark:border-slate-600" />
+                            <div className="absolute bottom-1.5 right-1.5 w-1.5 h-1.5 border-b border-r border-slate-400 dark:border-slate-600" />
+                            
+                            <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 font-mono font-bold text-xs tracking-wider border border-slate-300/80 dark:border-slate-600 mb-1">
+                              {member.initials || 'FDJ'}
+                            </div>
+                            <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                              Blank Frame
+                            </span>
+                            <span className="text-[8px] font-mono text-slate-400 dark:text-slate-500 leading-tight mt-0.5">
+                              Certified Roster
+                            </span>
+                          </div>
+                        )}
 
                         {/* Member Header & Discipline */}
                         <div className="space-y-1">
@@ -1944,6 +1950,19 @@ Official Portal: https://fuldej.com.ng
                 </button>
               </div>
             </div>
+
+            {/* Turnkey Machinery Installation, Plant Maintenance & Operator Training Showcase */}
+            <MachineryInstallationSection
+              isDark={isDark}
+              onSelectServiceForInquiry={(title, scope) => {
+                setContactForm(prev => ({
+                  ...prev,
+                  subject: `Services Inquiry: ${title}`,
+                  message: `Hello Fuldej Engineering Directorate,\n\nI am inquiring regarding turnkey machine installation and plant maintenance: ${scope || title}.\n\nPlease provide technical site evaluation and proposal timelines.`
+                }));
+                setCurrentPage('contact');
+              }}
+            />
           </div>
         )}
 
@@ -2714,7 +2733,7 @@ Official Portal: https://fuldej.com.ng
               <ul className="space-y-2 text-slate-400 text-xs">
                 <li><button onClick={() => setCurrentPage('home')} className="hover:text-white transition-colors">Home</button></li>
                 <li><button onClick={() => setCurrentPage('commodities')} className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">Agro-Commodities & Export</button></li>
-                <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition-colors">About Us & Team (10)</button></li>
+                <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition-colors">About Us & Team (9)</button></li>
                 <li><button onClick={() => setCurrentPage('services')} className="hover:text-white transition-colors">Services & Cost Estimator</button></li>
                 <li><button onClick={() => setCurrentPage('projects')} className="hover:text-white transition-colors">Projects & Initiatives</button></li>
                 <li><button onClick={() => setCurrentPage('partnerships')} className="hover:text-white transition-colors">Strategic Partnerships</button></li>
@@ -2816,10 +2835,10 @@ Official Portal: https://fuldej.com.ng
         </div>
       </footer>
 
-      {/* --- OFFICIAL FIELD ENGINEERING VIDEO MODAL --- */}
+      {/* --- OFFICIAL FIELD ENGINEERING & INDUSTRIAL MACHINERY VIDEO MODAL --- */}
       {showVideoModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-in fade-in">
-          <div className="w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0B1424] text-slate-200 space-y-4 max-h-[94vh] overflow-y-auto">
+          <div className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-[#0B1424] text-slate-200 space-y-4 max-h-[94vh] overflow-y-auto">
             {/* Modal Header */}
             <div className="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -2828,33 +2847,94 @@ Official Portal: https://fuldej.com.ng
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-base sm:text-lg text-white">
-                    Verified Field Execution Footage
+                    Verified Field Execution & Machinery Operations
                   </h3>
                   <span className="font-mono text-xs text-emerald-400">
-                    Industrial Solar Inverter & Felicity Lithium Storage Rack Facility
+                    Authentic Industrial Plants, Solar Micro-Grids & Export Warehousing
                   </span>
                 </div>
               </div>
               <button
                 onClick={() => setShowVideoModal(false)}
-                className="p-1 rounded text-slate-400 hover:text-white transition-colors"
+                className="p-1.5 rounded text-slate-400 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
+            {/* Video Selector Tabs */}
+            <div className="px-4 sm:px-6 flex flex-wrap gap-2">
+              {[
+                { id: 'machinery', label: '1. Factory Spinning Machinery Line', src: 'assets/aistudio/VID-20261029-WA0009_37cc9162.mp4', type: 'Turnkey Machine Installation', location: 'Industrial Manufacturing Corridor' },
+                { id: 'ventilation', label: '2. Plant Overhead Ducting & Floor', src: 'assets/aistudio/VID-20261029-WA0012_a9c42f5a.mp4', type: 'Factory Infrastructure & Staff', location: 'Northern Industrial Estate' },
+                { id: 'solar', label: '3. Solar Micro-Grid & Lithium Rack', src: 'assets/videos/fuldej_solar_installation_pro.mp4', type: 'Commercial Clean Power', location: 'Kano State Power Facility' },
+                { id: 'commodities', label: '4. Agro Warehousing & Quality Sort', src: 'assets/aistudio/VID-20261024-WA0019_e81acd5c.mp4', type: 'Worldwide Export Distribution', location: 'Danbatta Export Depot' }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setModalVideoTab(tab.id as any)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    modalVideoTab === tab.id
+                      ? 'bg-[#168A78] text-white shadow'
+                      : 'bg-slate-800 text-slate-300 hover:bg-slate-750'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
             {/* Video Player Container */}
             <div className="px-4 sm:px-6">
               <div className="rounded-xl overflow-hidden bg-black aspect-video border border-white/10 shadow-inner flex items-center justify-center">
-                <video
-                  controls
-                  autoPlay
-                  playsInline
-                  className="w-full h-full object-contain"
-                >
-                  <source src="assets/videos/fuldej_solar_installation_pro.mp4" type="video/mp4" />
-                  <source src="assets/aistudio/VID-20261022-WA0020__1__978a816f.mp4" type="video/mp4" />
-                </video>
+                {modalVideoTab === 'machinery' && (
+                  <video
+                    key="machinery"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                    src="assets/aistudio/VID-20261029-WA0009_37cc9162.mp4"
+                  />
+                )}
+                {modalVideoTab === 'ventilation' && (
+                  <video
+                    key="ventilation"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                    src="assets/aistudio/VID-20261029-WA0012_a9c42f5a.mp4"
+                  />
+                )}
+                {modalVideoTab === 'solar' && (
+                  <video
+                    key="solar"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                    src="assets/videos/fuldej_solar_installation_pro.mp4"
+                  />
+                )}
+                {modalVideoTab === 'commodities' && (
+                  <video
+                    key="commodities"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                    src="assets/aistudio/VID-20261024-WA0019_e81acd5c.mp4"
+                  />
+                )}
               </div>
             </div>
 
@@ -2862,21 +2942,25 @@ Official Portal: https://fuldej.com.ng
             <div className="p-4 sm:p-6 space-y-4 text-xs">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-                  <span className="text-[10px] text-slate-400 block font-mono">INSTALLATION TYPE:</span>
-                  <strong className="text-white text-xs">Solar Hybrid Micro-Grid</strong>
+                  <span className="text-[10px] text-slate-400 block font-mono">EXECUTION DISCIPLINE:</span>
+                  <strong className="text-white text-xs">
+                    {modalVideoTab === 'machinery' ? 'Factory Machine Installation' : modalVideoTab === 'ventilation' ? 'Plant Utilities & Ventilation' : modalVideoTab === 'solar' ? 'Solar Hybrid Micro-Grid' : 'Export Commodities Processing'}
+                  </strong>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-                  <span className="text-[10px] text-slate-400 block font-mono">STORAGE SYSTEM:</span>
-                  <strong className="text-white text-xs">Felicity Lithium Battery Rack</strong>
+                  <span className="text-[10px] text-slate-400 block font-mono">QUALITY STANDARD:</span>
+                  <strong className="text-white text-xs">
+                    {modalVideoTab === 'commodities' ? 'NEPC / Clean Machine-Sorted' : 'COREN Civil & Mechanical Standard'}
+                  </strong>
                 </div>
                 <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
                   <span className="text-[10px] text-slate-400 block font-mono">OPERATIONAL LOCATION:</span>
-                  <strong className="text-white text-xs">Kano State, Nigeria</strong>
+                  <strong className="text-white text-xs">Northern Industrial Corridor, Nigeria</strong>
                 </div>
               </div>
 
               <p className="text-slate-300 text-[11px] leading-relaxed">
-                Footage recorded directly on site during official commissioning and safety calibration by the Fuldej Integrated Service Ltd renewable engineering team. Verifies active industrial-grade installation capabilities.
+                Footage recorded on active project sites during installation, commissioning, maintenance, and operator training by the Fuldej Integrated Service Ltd engineering team.
               </p>
             </div>
 
@@ -2889,7 +2973,7 @@ Official Portal: https://fuldej.com.ng
                 }}
                 className="px-4 py-2 rounded-lg bg-[#168A78] hover:bg-[#127163] text-white text-xs font-bold transition-colors"
               >
-                Inquire Commercial Solar Project
+                Inquire Project Scope
               </button>
 
               <button

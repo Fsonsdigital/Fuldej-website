@@ -639,7 +639,7 @@ Official Portal: https://fuldej.com.ng
             {[
               { id: 'home', label: 'Home' },
               { id: 'commodities', label: 'Agro-Commodities (Worldwide Export)' },
-              { id: 'about', label: 'About Us & Full Team (9)' },
+              { id: 'about', label: 'About Us & Team' },
               { id: 'services', label: 'Services & Cost Estimator' },
               { id: 'projects', label: 'Projects & Initiatives' },
               { id: 'partnerships', label: 'Strategic Partnerships' },
@@ -787,7 +787,7 @@ Official Portal: https://fuldej.com.ng
                           className="px-6 py-3.5 rounded-xl font-bold text-sm backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 text-white shadow-md transition-all hover:-translate-y-0.5 flex items-center gap-2 active:scale-95"
                         >
                           <Users className="w-4 h-4" />
-                          <span>Meet Our Team (9)</span>
+                          <span>Meet Our Team</span>
                         </button>
 
                         <button
@@ -899,15 +899,15 @@ Official Portal: https://fuldej.com.ng
                   </div>
                   <div>
                     <div className={`font-heading font-extrabold text-2xl sm:text-3xl ${isDark ? 'text-cyan-400' : 'text-[#168A78]'}`}>
-                      9 Members
+                      Certified
                     </div>
                     <div className={`text-xs mt-1 font-medium ${isDark ? 'text-slate-400' : 'text-[#5A6B82]'}`}>
-                      Certified Multidisciplinary Team
+                      Multidisciplinary Engineering Directorate
                     </div>
                   </div>
                   <div>
                     <div className={`font-heading font-extrabold text-2xl sm:text-3xl ${isDark ? 'text-amber-300' : 'text-[#142B4A]'}`}>
-                      20+ Years
+                      COREN Grade
                     </div>
                     <div className={`text-xs mt-1 font-medium ${isDark ? 'text-slate-400' : 'text-[#5A6B82]'}`}>
                       Field & Technical Track Record
@@ -1237,7 +1237,7 @@ Official Portal: https://fuldej.com.ng
                   <div className={`p-6 rounded-2xl border ${isDark ? 'bg-[#132238] border-slate-700' : 'bg-white border-slate-200'}`}>
                     <Users className="w-8 h-8 text-cyan-400 mb-3" />
                     <h4 className={`font-heading font-bold text-base mb-1 ${isDark ? 'text-white' : 'text-[#142B4A]'}`}>
-                      9-Member Expert Team
+                      Multidisciplinary Expert Team
                     </h4>
                     <p className={`text-xs leading-relaxed ${isDark ? 'text-slate-300' : 'text-[#5A6B82]'}`}>
                       Led by M.D. Ishaq Ibrahim Jaafar & Fahad Isyaku Umar, backed by registered civil, electrical, mechanical, IT, and environmental specialists.
@@ -1468,7 +1468,7 @@ Official Portal: https://fuldej.com.ng
                         : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    All Team (9)
+                    All Team
                   </button>
                   <button
                     onClick={() => setTeamDepartmentFilter('executive')}
@@ -1478,7 +1478,7 @@ Official Portal: https://fuldej.com.ng
                         : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    Executive Directorate (2)
+                    Executive Directorate
                   </button>
                   <button
                     onClick={() => setTeamDepartmentFilter('engineering')}
@@ -1488,7 +1488,7 @@ Official Portal: https://fuldej.com.ng
                         : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    Civil, Mechanical & Automation (4)
+                    Civil, Mechanical & Automation
                   </button>
                   <button
                     onClick={() => setTeamDepartmentFilter('tech_env')}
@@ -1498,7 +1498,7 @@ Official Portal: https://fuldej.com.ng
                         : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
-                    Software & Environmental (3)
+                    Software & Environmental
                   </button>
                 </div>
               </div>
@@ -1546,9 +1546,6 @@ Official Portal: https://fuldej.com.ng
 
                         {/* Member Header & Discipline */}
                         <div className="space-y-1">
-                          <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                            {member.experienceYears} Years Exp
-                          </span>
                           <h3 className={`font-heading font-bold text-base leading-snug ${isDark ? 'text-white' : 'text-[#142B4A]'}`}>
                             {member.name}
                           </h3>
@@ -2733,7 +2730,7 @@ Official Portal: https://fuldej.com.ng
               <ul className="space-y-2 text-slate-400 text-xs">
                 <li><button onClick={() => setCurrentPage('home')} className="hover:text-white transition-colors">Home</button></li>
                 <li><button onClick={() => setCurrentPage('commodities')} className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">Agro-Commodities & Export</button></li>
-                <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition-colors">About Us & Team (9)</button></li>
+                <li><button onClick={() => setCurrentPage('about')} className="hover:text-white transition-colors">About Us & Team</button></li>
                 <li><button onClick={() => setCurrentPage('services')} className="hover:text-white transition-colors">Services & Cost Estimator</button></li>
                 <li><button onClick={() => setCurrentPage('projects')} className="hover:text-white transition-colors">Projects & Initiatives</button></li>
                 <li><button onClick={() => setCurrentPage('partnerships')} className="hover:text-white transition-colors">Strategic Partnerships</button></li>

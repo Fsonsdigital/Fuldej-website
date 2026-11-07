@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span className="text-white font-bold">{FULDEJ_CORPORATE_INFO.cacNumber}</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
-              <span className="text-emerald-400 font-bold">20+ Years Field Experience</span>
+              <span className="text-emerald-400 font-bold">Certified Technical Directorate</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span>Kano, Nigeria</span>
             </div>
@@ -226,10 +226,10 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="mt-14 pt-8 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="space-y-1">
             <div className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-white tabular-nums">
-              20+ Years
+              COREN Grade
             </div>
             <div className="text-xs text-slate-400">
-              Multidisciplinary Field Experience
+              Multidisciplinary Field Execution
             </div>
           </div>
 

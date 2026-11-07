@@ -137,7 +137,7 @@ ESTIMATED TOTAL INVESTMENT:              ${formatCurrency(totalNgn)}
 
 TERMS & LEGAL COMPLIANCE:
 - Formulated under CAC RC 7360949 and relevant statutory standards.
-- 20+ Years combined multidisciplinary industry experience.
+- Certified multidisciplinary technical directorate and engineering team.
 - Official Banker: ${FULDEJ_CORPORATE_INFO.bankers}
 - Legal Advisor: ${FULDEJ_CORPORATE_INFO.legalAdvisor}
 

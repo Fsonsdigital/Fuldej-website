@@ -76,7 +76,7 @@ export interface TeamMember {
   name: string;
   role: string;
   discipline: string;
-  experienceYears: number;
+  experienceYears?: number;
   bio: string;
   image?: string;
   hasPhoto?: boolean;

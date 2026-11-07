@@ -12,7 +12,7 @@ export const FULDEJ_CORPORATE_INFO = {
   registeredName: 'Fuldej Integrated Service Ltd',
   cacNumber: 'RC 7360949',
   incorporationDate: '21 February 2024',
-  experience: '20+ Years Multidisciplinary Industry & Field Experience',
+  experience: 'Proven Multidisciplinary Industry & Field Execution',
   motto: 'Building Sustainable Solutions Through Innovation, Partnership, and Impact.',
   address: 'White Container, BUK Old Campus Area, Opposite Laundry Junction, Kano State, Nigeria',
   email: 'info@fuldej.com.ng',
@@ -426,11 +426,10 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'M.D. Ishaq Ibrahim Jaafar',
     role: 'Founder & Managing Director',
     discipline: 'Executive Leadership & Infrastructure Implementation',
-    experienceYears: 20,
     hasPhoto: true,
     image: 'assets/team/md-ishaq-ibrahim.jpg',
     initials: 'IIJ',
-    bio: 'Visionary founder and managing director of Fuldej Integrated Service Ltd. With over 20+ years of multidisciplinary industry and field experience, directing mining concession operations, deep industrial borehole programs, solar energy micro-grids, and corporate partnerships across Nigeria.'
+    bio: 'Visionary founder and managing director of Fuldej Integrated Service Ltd, directing mining concession operations, deep industrial borehole programs, solar energy micro-grids, and corporate partnerships across Nigeria.'
   },
   // 2. Blank Frame [NO PHOTO - BLANK FRAME]
   {
@@ -438,7 +437,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Eng. Musa Zulyadain',
     role: 'Civil Engineer',
     discipline: 'Structural & Infrastructure Engineering',
-    experienceYears: 16,
     hasPhoto: false,
     initials: 'MZ',
     bio: 'Senior civil engineer specialist in heavy structural foundations, elevated water reservoirs, machine plinths, reinforced drainage infrastructure, and COREN-standard civil documentation.'
@@ -449,7 +447,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Fahad Isyaku Umar',
     role: 'Co-Founder & Strategic Partner',
     discipline: 'Strategic Innovation & Strategic Initiatives Lead',
-    experienceYears: 18,
     isKeyPartner: true,
     hasPhoto: true,
     image: 'assets/team/fahad-isyaku-umar.jpg',
@@ -462,7 +459,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Eng. Usman Tanko',
     role: 'Mechanical Engineer',
     discipline: 'Drilling Mechanics & Hydraulic Systems',
-    experienceYears: 17,
     hasPhoto: false,
     initials: 'UT',
     bio: 'Oversees rotary deep borehole drilling rigs (up to 250m+), heavy down-the-hole (DTH) air percussion hammers, high-head industrial pumps, and mineral extraction mechanical plants.'
@@ -473,7 +469,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Eng. (Arc) Nura Sambo',
     role: 'Architecture Lead',
     discipline: 'Architectural & Spatial Planning',
-    experienceYears: 14,
     hasPhoto: true,
     image: 'assets/team/eng-arc-nura-sambo.jpg',
     initials: 'NS',
@@ -485,7 +480,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Pharmacy Adamu Lawan Wakili',
     role: 'Pharmaceutical & Environmental Tech',
     discipline: 'Water Quality Chemistry & Environmental Safety',
-    experienceYears: 14,
     hasPhoto: false,
     initials: 'ALW',
     bio: 'Oversees certified laboratory physicochemical and microbiological water testing, mineral assay safety, and statutory environmental compliance.'
@@ -496,7 +490,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'DBA Danjuma Idiris',
     role: 'Information Technology Lead',
     discipline: 'Enterprise Software & Database Architecture',
-    experienceYears: 14,
     hasPhoto: true,
     image: 'assets/team/dba-danjuma-idiris.jpg',
     initials: 'DI',
@@ -508,7 +501,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Q&T Surajo Yunusa',
     role: 'Quantity & Surveyor',
     discipline: 'Cost Engineering & Land Surveying',
-    experienceYears: 15,
     hasPhoto: false,
     initials: 'SY',
     bio: 'Conducts topographical surveys, cadastral concession boundary mapping, bills of quantities (BOQ), and cost audits for commercial contracts.'
@@ -519,7 +511,6 @@ export const LEADERSHIP_TEAM: TeamMember[] = [
     name: 'Eng. Ashiru Abdul',
     role: 'Mechatronics Engineer',
     discipline: 'Robotics, Telemetry & Automation',
-    experienceYears: 12,
     hasPhoto: true,
     image: 'assets/team/eng-ashiru-abdul.jpg',
     initials: 'AA',
